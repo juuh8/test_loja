@@ -7,7 +7,7 @@ body {
 header {
   background: #ff4da6;
   color: white;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -15,28 +15,19 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
 }
 
 .produto {
   background: white;
-  width: 200px;
   margin: 10px;
-  padding: 15px;
+  padding: 10px;
+  width: 200px;
   border-radius: 10px;
   text-align: center;
 }
 
 .produto img {
   width: 100%;
-}
-
-button {
-  background: #ff4da6;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
 }
 
 #carrinho {
@@ -46,4 +37,12 @@ button {
   background: white;
   padding: 10px;
   width: 200px;
+}
+
+#painel {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  background: white;
+  padding: 10px;
 }
