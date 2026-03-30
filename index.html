@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Loja de Biquínis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Loja de Biquínis</h1>
+</header>
+
+<div id="carrinho">
+  <h3>Carrinho</h3>
+  <ul id="lista-carrinho"></ul>
+  <p><strong>Total: R$ <span id="total">0</span></strong></p>
+  <button onclick="finalizarCompra()">Finalizar</button>
+</div>
+
+<div class="container">
+
+  <div class="produto">
+    <img src="https://via.placeholder.com/200">
+    <h3>Biquíni Rosa</h3>
+    <p>R$ 50</p>
+    <button onclick="adicionar('Biquíni Rosa', 50)">Comprar</button>
+  </div>
+
+  <div class="produto">
+    <img src="https://via.placeholder.com/200">
+    <h3>Biquíni Azul</h3>
+    <p>R$ 70</p>
+    <button onclick="adicionar('Biquíni Azul', 70)">Comprar</button>
+  </div>
+
+  <div class="produto">
+    <img src="https://via.placeholder.com/200">
+    <h3>Biquíni Preto</h3>
+    <p>R$ 90</p>
+    <button onclick="adicionar('Biquíni Preto', 90)">Comprar</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
