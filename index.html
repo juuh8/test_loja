@@ -2,45 +2,46 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Loja de Biquínis</title>
+  <title>Loja</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>Loja de Biquínis</h1>
+  <h1 id="titulo">Loja de Biquínis</h1>
+
+  <!-- Idiomas -->
+  <select onchange="mudarIdioma(this.value)">
+    <option value="pt">Português</option>
+    <option value="en">English</option>
+    <option value="es">Español</option>
+  </select>
+
+  <!-- Painel vendedor -->
+  <button onclick="abrirPainel()">🔒 Vendedor</button>
 </header>
 
+<!-- Carrinho -->
 <div id="carrinho">
-  <h3>Carrinho</h3>
+  <h3 id="carrinhoTitulo">Carrinho</h3>
   <ul id="lista-carrinho"></ul>
-  <p><strong>Total: R$ <span id="total">0</span></strong></p>
-  <button onclick="finalizarCompra()">Finalizar</button>
+  <p><strong id="totalTexto">Total: </strong><span id="total">0</span></p>
 </div>
 
-<div class="container">
+<!-- Produtos -->
+<div class="container" id="produtos"></div>
 
-  <div class="produto">
-    <img src="https://via.placeholder.com/200">
-    <h3>Biquíni Rosa</h3>
-    <p>R$ 50</p>
-    <button onclick="adicionar('Biquíni Rosa', 50)">Comprar</button>
-  </div>
+<!-- Painel -->
+<div id="painel" style="display:none;">
+  <h2>Painel do Vendedor</h2>
 
-  <div class="produto">
-    <img src="https://via.placeholder.com/200">
-    <h3>Biquíni Azul</h3>
-    <p>R$ 70</p>
-    <button onclick="adicionar('Biquíni Azul', 70)">Comprar</button>
-  </div>
+  <input id="nome" placeholder="Nome">
+  <input id="preco" placeholder="Preço" type="number">
+  <input id="imagem" placeholder="URL da imagem">
+  <input id="tamanhos" placeholder="Tamanhos (P,M,G)">
 
-  <div class="produto">
-    <img src="https://via.placeholder.com/200">
-    <h3>Biquíni Preto</h3>
-    <p>R$ 90</p>
-    <button onclick="adicionar('Biquíni Preto', 90)">Comprar</button>
-  </div>
-
+  <button onclick="adicionarProduto()">Adicionar Produto</button>
+  <button onclick="fecharPainel()">Fechar</button>
 </div>
 
 <script src="script.js"></script>
