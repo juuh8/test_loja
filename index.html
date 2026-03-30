@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Loja</title>
+  <title>Loja de Biquínis</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,33 +17,78 @@
     <option value="es">Español</option>
   </select>
 
-  <!-- Painel vendedor -->
-  <button onclick="abrirPainel()">🔒 Vendedor</button>
+  <!-- Login -->
+  <button onclick="abrirLogin()">🔒 Login</button>
+  <button onclick="logout()">🚪 Sair</button>
+
+  <!-- Painel -->
+  <button onclick="abrirPainel()">⚙️ Painel</button>
 </header>
 
-<!-- Carrinho -->
+<!-- LOGIN -->
+<div id="loginBox" style="display:none;">
+  <h3>Login Vendedor</h3>
+  <input id="loginUser" placeholder="Login">
+  <input id="loginSenha" type="password" placeholder="Senha">
+  <button onclick="fazerLogin()">Entrar</button>
+  <button onclick="fecharLogin()">Fechar</button>
+</div>
+
+<!-- CARRINHO -->
 <div id="carrinho">
   <h3 id="carrinhoTitulo">Carrinho</h3>
   <ul id="lista-carrinho"></ul>
   <p><strong id="totalTexto">Total: </strong><span id="total">0</span></p>
 </div>
 
-<!-- Produtos -->
+<!-- PRODUTOS -->
 <div class="container" id="produtos"></div>
 
-<!-- Painel -->
+<!-- PAINEL -->
 <div id="painel" style="display:none;">
   <h2>Painel do Vendedor</h2>
 
-  <input id="nome" placeholder="Nome">
-  <input id="preco" placeholder="Preço" type="number">
+  <input id="nome" placeholder="Nome do produto">
+  <input id="preco" type="number" placeholder="Preço">
   <input id="imagem" placeholder="URL da imagem">
   <input id="tamanhos" placeholder="Tamanhos (P,M,G)">
 
-  <button onclick="adicionarProduto()">Adicionar Produto</button>
+  <button onclick="adicionarProduto()">Adicionar</button>
   <button onclick="fecharPainel()">Fechar</button>
 </div>
 
 <script src="script.js"></script>
+
+<script>
+// ===== LOGIN VISUAL =====
+function abrirLogin(){
+  document.getElementById("loginBox").style.display = "block";
+}
+
+function fecharLogin(){
+  document.getElementById("loginBox").style.display = "none";
+}
+
+function fazerLogin(){
+  const user = document.getElementById("loginUser").value;
+  const senha = document.getElementById("loginSenha").value;
+
+  if(user === "admin" && senha === "1234"){
+    localStorage.setItem("admin", "true");
+    alert("Logado como vendedor!");
+    fecharLogin();
+    location.reload();
+  } else {
+    alert("Login errado");
+  }
+}
+
+function logout(){
+  localStorage.setItem("admin", "false");
+  alert("Saiu!");
+  location.reload();
+}
+</script>
+
 </body>
 </html>
